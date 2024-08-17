@@ -1,4 +1,5 @@
-# ![Smart File Renamer](resources/icon.png)
+# Smart Screenshots
+
 <p align="center">
   <img src="resources/icon.png" alt="Smart File Renamer" width="150">
 </p>

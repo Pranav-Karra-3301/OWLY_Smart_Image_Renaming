@@ -1,5 +1,5 @@
 import os
-from process_images import process_files, load_config
+from process_images_cloudinary import process_files, load_config
 
 # Function to rename the file in place
 def rename_file_in_place(original_path, new_filename):

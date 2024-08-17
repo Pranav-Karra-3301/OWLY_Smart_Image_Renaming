@@ -1,22 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;600&display=swap');
 
 :root {
-    --primary-color: #007AFF;
+    --primary-color: #3828ff;
     --text-color: #333;
-    --bg-color: #F5F5F7;
+    --bg-color: #0d1117;
 }
 
 body {
     font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
     background-color: var(--bg-color);
-    color: var(--text-color);
+    color: #c9d1d9;
     line-height: 1.6;
     margin: 0;
     padding: 0;
 }
 
 .navbar {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(13, 17, 23, 0.8);
     backdrop-filter: blur(10px);
     position: fixed;
     top: 0;
@@ -28,7 +28,7 @@ body {
 }
 
 .navbar a {
-    color: var(--text-color);
+    color: #c9d1d9;
     text-decoration: none;
     margin: 0 1rem;
     font-weight: 400;
@@ -43,7 +43,7 @@ body {
     max-width: 1000px;
     margin: 6rem auto 2rem;
     padding: 2rem;
-    background-color: white;
+    background-color: #161b22;
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
@@ -88,7 +88,7 @@ img {
 }
 
 .code-block {
-    background-color: #f4f4f4;
+    background-color: #0d1117;
     border-radius: 6px;
     padding: 1rem;
     margin: 1rem 0;
@@ -96,29 +96,37 @@ img {
 }
 
 .feature {
-    background-color: #f9f9f9;
+    background-color: #21262d;
     border-radius: 8px;
     padding: 1.5rem;
     margin-bottom: 2rem;
 }
 
 .github-link {
-    display: inline-block;
-    margin-top: 2rem;
+    display: block;
+    margin: 2rem auto;
     text-align: center;
-    text-decoration: none;
-    color: var(--primary-color);
-    font-weight: 600;
+    width: 100px;
+    height: 100px;
 }
 
 .github-link img {
-    width: 30px;
-    margin: 0 auto 0.5rem;
+    width: 100%;
+    height: 100%;
     transition: transform 0.3s ease;
 }
 
 .github-link:hover img {
     transform: scale(1.1);
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 @media (max-width: 768px) {

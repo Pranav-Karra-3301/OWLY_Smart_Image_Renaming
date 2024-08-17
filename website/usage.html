@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usage - Smart Screenshots</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="features.html">Features</a>
+        <a href="installation.html">Installation</a>
+        <a href="usage.html">Usage</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="license.html">License</a>
+    </nav>
+
+    <div class="container">
+        <h1>Usage</h1>
+
+        <h2>1. Basic Method</h2>
+        <p><strong>Dependencies:</strong> None required beyond basic Python packages.</p>
+        <p><strong>Command:</strong></p>
+        <div class="code-block">
+            <code>python basic.py --input_folder &lt;path-to-folder&gt;</code>
+        </div>
+
+        <h2>2. Advanced Method 1: Base64 Encoding with OpenAI API</h2>
+        <p><strong>Dependencies:</strong> Requires OpenAI API key.</p>
+        <p><strong>Command:</strong></p>
+        <div class="code-block">
+            <code>python rename_files_base64.py --input_folder &lt;path-to-folder&gt; --config config.json</code>
+        </div>
+
+        <h2>3. Advanced Method 2: Cloudinary Integration with OpenAI API</h2>
+        <p><strong>Dependencies:</strong> Requires both OpenAI API key and Cloudinary credentials.</p>
+        <p><strong>Command:</strong></p>
+        <div class="code-block">
+            <code>python rename_files_cloudinary.py --input_folder &lt;path-to-folder&gt; --config config.json</code>
+        </div>
+    </div>
+</body>
+</html>

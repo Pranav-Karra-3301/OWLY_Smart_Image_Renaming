@@ -3,31 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OWLY - Installation & Usage</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="public/icon.png">
+    <title>Installation - Smart Screenshots</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="navbar">
+    <nav class="navbar">
         <a href="index.html">Home</a>
+        <a href="features.html">Features</a>
+        <a href="installation.html">Installation</a>
+        <a href="usage.html">Usage</a>
         <a href="roadmap.html">Roadmap</a>
-        <a href="installation.html">Installation & Usage</a>
         <a href="license.html">License</a>
-    </div>
+    </nav>
+
     <div class="container">
-        <h1>Installation & Usage</h1>
-        <h2>Installation</h2>
-        <p>To install the project, follow these steps:</p>
+        <h1>Installation</h1>
+
+        <h2>Getting Started</h2>
+        <ol>
+            <li>
+                <strong>Clone the Repository:</strong>
+                <div class="code-block">
+                    <code>
+                        git clone https://github.com/Pranav-Karra-3301/smart-screenshots.git<br>
+                        cd smart-screenshots
+                    </code>
+                </div>
+            </li>
+            <li>
+                <strong>Install Dependencies:</strong>
+                <div class="code-block">
+                    <code>pip install -r requirements.txt</code>
+                </div>
+            </li>
+        </ol>
+
+        <h2>Basic Setup</h2>
+        <ol>
+            <li>
+                <strong>Install Tesseract OCR:</strong>
+                <ul>
+                    <li>macOS: <code>brew install tesseract</code></li>
+                    <li>Ubuntu: <code>sudo apt-get install tesseract-ocr</code></li>
+                    <li>Windows: Download from the <a href="https://github.com/tesseract-ocr/tesseract/wiki" target="_blank">official site</a></li>
+                </ul>
+            </li>
+            <li>
+                <strong>Download the spaCy model:</strong>
+                <div class="code-block">
+                    <code>python -m spacy download en_core_web_sm</code>
+                </div>
+            </li>
+        </ol>
+
+        <h2>Advanced Setup</h2>
+        <p>Set Up Configuration:</p>
+        <p>Create a <code>config.json</code> file in the root directory with the following keys:</p>
         <div class="code-block">
-            git clone https://github.com/your-username/your-repo-name.git<br>
-            cd your-repo-name && npm install
+            <code>
+                {<br>
+                &nbsp;&nbsp;"openai_api_key": "your-openai-api-key",<br>
+                &nbsp;&nbsp;"cloudinary_cloud_name": "your-cloudinary-cloud-name",<br>
+                &nbsp;&nbsp;"cloudinary_api_key": "your-cloudinary-api-key",<br>
+                &nbsp;&nbsp;"cloudinary_api_secret": "your-cloudinary-api-secret"<br>
+                }
+            </code>
         </div>
-        <h2>Usage</h2>
-        <p>To run the project, use the following command:</p>
-        <div class="code-block">
-            npm start
-        </div>
-        <p>For advanced options, refer to the project’s documentation.</p>
     </div>
 </body>
 </html>

@@ -1,115 +1,82 @@
-/* style.css */
-@import url('https://fonts.googleapis.com/css2?family=Futura:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;600&display=swap');
+
+:root {
+    --primary-color: #007AFF;
+    --text-color: #333;
+    --bg-color: #F5F5F7;
+}
 
 body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Futura', sans-serif;
-  background-color: #0d1117;
-  color: #c9d1d9;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  animation: fadeIn 1.5s ease-in;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-.container {
-  width: 90%;
-  max-width: 800px;
-  padding: 40px;
-  background-color: #161b22;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
-  transform: translateY(20px);
-  animation: slideUp 1s ease-in-out forwards;
-}
-
-@keyframes slideUp {
-  to { transform: translateY(0); }
-}
-
-h1, h2 {
-  color: #58a6ff;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-h1 {
-  font-size: 2.5rem;
-  animation: bounce 1.5s ease-in-out infinite alternate;
-}
-
-@keyframes bounce {
-  from { transform: translateY(0); }
-  to { transform: translateY(-10px); }
+    font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
 }
 
 .navbar {
-  width: 100%;
-  text-align: center;
-  margin-bottom: 30px;
-  background-color: #0d1117;
-  padding: 20px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 1rem 0;
+    text-align: center;
 }
 
 .navbar a {
-  margin: 0 15px;
-  font-size: 18px;
-  color: #58a6ff;
-  text-decoration: none;
-  position: relative;
+    color: var(--text-color);
+    text-decoration: none;
+    margin: 0 1rem;
+    font-weight: 400;
+    transition: color 0.3s ease;
 }
 
-.navbar a::after {
-  content: '';
-  display: block;
-  width: 0;
-  height: 2px;
-  background: #58a6ff;
-  transition: width .3s;
+.navbar a:hover {
+    color: var(--primary-color);
 }
 
-.navbar a:hover::after {
-  width: 100%;
+.container {
+    max-width: 1000px;
+    margin: 6rem auto 2rem;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-p {
-  font-size: 1.125rem;
-  line-height: 1.8;
-  margin-bottom: 20px;
-  text-align: center;
+h1, h2 {
+    color: var(--primary-color);
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-top: 2rem;
+}
+
+p, ul, ol {
+    margin: 1rem 0;
 }
 
 img {
-  display: block;
-  margin: 20px auto;
+    display: block;
+    margin: 2rem auto;
+    max-width: 150px;
 }
 
-.code-block {
-  background-color: #0d1117;
-  color: #c9d1d9;
-  padding: 15px;
-  border-radius: 5px;
-  font-family: 'Courier New', monospace;
-  margin: 20px 0;
-  overflow-x: auto;
-  text-align: left;
-  font-size: 1rem;
-}
-
-ul {
-  text-align: left;
-  padding-left: 20px;
-}
+.badges {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;

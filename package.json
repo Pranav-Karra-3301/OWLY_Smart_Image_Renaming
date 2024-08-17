@@ -1,0 +1,7 @@
+{
+  "devDependencies": {
+    "@types/styled-components": "^5.1.34",
+    "framer-motion": "^11.3.28",
+    "styled-components": "^6.1.12"
+  }
+}

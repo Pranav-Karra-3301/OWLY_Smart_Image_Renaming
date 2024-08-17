@@ -3,3 +3,8 @@ images/
 dependencies.txt
 config.json
 __pycache__/
+node_modules
+.next
+.env.local
+.env
+.vercel

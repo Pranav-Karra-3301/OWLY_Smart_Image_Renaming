@@ -77,7 +77,7 @@ To get started with Smart File Renamer, follow these steps:
    }
    ```
 
-### 2. Usage Instructions
+
 
 
 ## 🚀 Usage
@@ -105,7 +105,6 @@ Follow the steps below to use each method:
     python rename_files_cloudinary.py --input_folder <path-to-folder> --config config.json
     ```
 
-### 3. License
 
 
 ## 📄 License

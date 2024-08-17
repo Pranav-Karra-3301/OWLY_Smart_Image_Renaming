@@ -80,3 +80,57 @@ img {
     justify-content: center;
     flex-wrap: wrap;
     gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.badges img {
+    margin: 0;
+}
+
+.code-block {
+    background-color: #f4f4f4;
+    border-radius: 6px;
+    padding: 1rem;
+    margin: 1rem 0;
+    overflow-x: auto;
+}
+
+.feature {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.github-link {
+    display: inline-block;
+    margin-top: 2rem;
+    text-align: center;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.github-link img {
+    width: 30px;
+    margin: 0 auto 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.github-link:hover img {
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+}

@@ -1,8 +1,10 @@
 /* style.css */
+@import url('https://fonts.googleapis.com/css2?family=Futura:wght@400;700&display=swap');
+
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Arial', sans-serif;
+  font-family: 'Futura', sans-serif;
   background-color: #0d1117;
   color: #c9d1d9;
   display: flex;
@@ -10,40 +12,104 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  animation: fadeIn 1.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .container {
   width: 90%;
   max-width: 800px;
-  padding: 20px;
+  padding: 40px;
   background-color: #161b22;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+  transform: translateY(20px);
+  animation: slideUp 1s ease-in-out forwards;
+}
+
+@keyframes slideUp {
+  to { transform: translateY(0); }
 }
 
 h1, h2 {
   color: #58a6ff;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-a {
-  color: #58a6ff;
-  text-decoration: none;
+h1 {
+  font-size: 2.5rem;
+  animation: bounce 1.5s ease-in-out infinite alternate;
 }
 
-a:hover {
-  text-decoration: underline;
+@keyframes bounce {
+  from { transform: translateY(0); }
+  to { transform: translateY(-10px); }
 }
 
 .navbar {
+  width: 100%;
+  text-align: center;
   margin-bottom: 30px;
+  background-color: #0d1117;
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
 }
 
 .navbar a {
   margin: 0 15px;
   font-size: 18px;
+  color: #58a6ff;
+  text-decoration: none;
+  position: relative;
+}
+
+.navbar a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #58a6ff;
+  transition: width .3s;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+p {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 img {
   display: block;
   margin: 20px auto;
+}
+
+.code-block {
+  background-color: #0d1117;
+  color: #c9d1d9;
+  padding: 15px;
+  border-radius: 5px;
+  font-family: 'Courier New', monospace;
+  margin: 20px 0;
+  overflow-x: auto;
+  text-align: left;
+  font-size: 1rem;
+}
+
+ul {
+  text-align: left;
+  padding-left: 20px;
 }

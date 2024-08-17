@@ -1,1 +1,4 @@
-/venv/
+venv/
+images/
+dependencies.txt
+config.json

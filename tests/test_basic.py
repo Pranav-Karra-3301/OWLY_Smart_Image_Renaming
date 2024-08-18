@@ -36,8 +36,7 @@ class TestBasic(unittest.TestCase):
         rename_screenshot("test_screenshot.png")
 
         mock_rename.assert_called_once_with(
-            "test_screenshot.png", 
-            "test_screenshot_directory/Sample_text_Sample_caption.png"
+            "test_images/test_image.png"
         )
 
 if __name__ == "__main__":

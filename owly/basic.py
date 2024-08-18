@@ -66,5 +66,5 @@ def process_screenshots_in_directory(directory):
             rename_screenshot(screenshot_path)
 
 # Replace with the path of your screenshots folder
-screenshots_directory = 'path/to/screenshots'
+screenshots_directory = 'test_images/test_image.png'
 process_screenshots_in_directory(screenshots_directory)

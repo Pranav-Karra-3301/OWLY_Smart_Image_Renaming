@@ -95,7 +95,7 @@ def main():
     api_key = config['openai_api_key']
     
     # Specify either a single file or a directory of files
-    path = "images/img.png"  # Change to a single file path or a directory path as needed
+    path = "test_images/test_image.png"  # Change to a single file path or a directory path as needed
     
     results = process_files(path, api_key)
     print("Processing complete. Results:", results)

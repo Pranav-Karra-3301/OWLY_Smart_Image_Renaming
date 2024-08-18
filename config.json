@@ -1,0 +1,8 @@
+{
+    "openai_api_key": "OpenAI Api Key",
+    "model": "gpt-4o",
+    "cloudinary_cloud_name": "Cloudinary Cloud Name",
+    "cloudinary_api_key": "Cloudinary API Key",
+    "cloudinary_api_secret": "Cloudinary API Secret",
+    "api_environment_variable": "Cloudinary Environment Variable"
+}

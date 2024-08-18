@@ -1,0 +1,622 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 70;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		30B497DE2C71C28C00780AAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 30B497BF2C71C28B00780AAC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 30B497C62C71C28B00780AAC;
+			remoteInfo = Owly;
+		};
+		30B497E82C71C28C00780AAC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 30B497BF2C71C28B00780AAC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 30B497C62C71C28B00780AAC;
+			remoteInfo = Owly;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		30B498242C71DB5D00780AAC /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		30B497C72C71C28B00780AAC /* Owly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Owly.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		30B497DD2C71C28C00780AAC /* OwlyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OwlyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		30B497E72C71C28C00780AAC /* OwlyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OwlyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		30B498262C71DB5D00780AAC /* OwlyHelper */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OwlyHelper; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		30B497C92C71C28B00780AAC /* Owly */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Owly; sourceTree = "<group>"; };
+		30B497E02C71C28C00780AAC /* OwlyTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = OwlyTests; sourceTree = "<group>"; };
+		30B497EA2C71C28C00780AAC /* OwlyUITests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = OwlyUITests; sourceTree = "<group>"; };
+		30B498272C71DB5D00780AAC /* OwlyHelper */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = OwlyHelper; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		30B497C42C71C28B00780AAC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30B497DA2C71C28C00780AAC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30B497E42C71C28C00780AAC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30B498232C71DB5D00780AAC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		30B497BE2C71C28B00780AAC = {
+			isa = PBXGroup;
+			children = (
+				30B497C92C71C28B00780AAC /* Owly */,
+				30B497E02C71C28C00780AAC /* OwlyTests */,
+				30B497EA2C71C28C00780AAC /* OwlyUITests */,
+				30B498272C71DB5D00780AAC /* OwlyHelper */,
+				30B497C82C71C28B00780AAC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		30B497C82C71C28B00780AAC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				30B497C72C71C28B00780AAC /* Owly.app */,
+				30B497DD2C71C28C00780AAC /* OwlyTests.xctest */,
+				30B497E72C71C28C00780AAC /* OwlyUITests.xctest */,
+				30B498262C71DB5D00780AAC /* OwlyHelper */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		30B497C62C71C28B00780AAC /* Owly */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30B497F12C71C28C00780AAC /* Build configuration list for PBXNativeTarget "Owly" */;
+			buildPhases = (
+				30B497C32C71C28B00780AAC /* Sources */,
+				30B497C42C71C28B00780AAC /* Frameworks */,
+				30B497C52C71C28B00780AAC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				30B497C92C71C28B00780AAC /* Owly */,
+			);
+			name = Owly;
+			packageProductDependencies = (
+			);
+			productName = Owly;
+			productReference = 30B497C72C71C28B00780AAC /* Owly.app */;
+			productType = "com.apple.product-type.application";
+		};
+		30B497DC2C71C28C00780AAC /* OwlyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30B497F42C71C28C00780AAC /* Build configuration list for PBXNativeTarget "OwlyTests" */;
+			buildPhases = (
+				30B497D92C71C28C00780AAC /* Sources */,
+				30B497DA2C71C28C00780AAC /* Frameworks */,
+				30B497DB2C71C28C00780AAC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				30B497DF2C71C28C00780AAC /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				30B497E02C71C28C00780AAC /* OwlyTests */,
+			);
+			name = OwlyTests;
+			packageProductDependencies = (
+			);
+			productName = OwlyTests;
+			productReference = 30B497DD2C71C28C00780AAC /* OwlyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		30B497E62C71C28C00780AAC /* OwlyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30B497F72C71C28C00780AAC /* Build configuration list for PBXNativeTarget "OwlyUITests" */;
+			buildPhases = (
+				30B497E32C71C28C00780AAC /* Sources */,
+				30B497E42C71C28C00780AAC /* Frameworks */,
+				30B497E52C71C28C00780AAC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				30B497E92C71C28C00780AAC /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				30B497EA2C71C28C00780AAC /* OwlyUITests */,
+			);
+			name = OwlyUITests;
+			packageProductDependencies = (
+			);
+			productName = OwlyUITests;
+			productReference = 30B497E72C71C28C00780AAC /* OwlyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		30B498252C71DB5D00780AAC /* OwlyHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 30B4982A2C71DB5D00780AAC /* Build configuration list for PBXNativeTarget "OwlyHelper" */;
+			buildPhases = (
+				30B498222C71DB5D00780AAC /* Sources */,
+				30B498232C71DB5D00780AAC /* Frameworks */,
+				30B498242C71DB5D00780AAC /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				30B498272C71DB5D00780AAC /* OwlyHelper */,
+			);
+			name = OwlyHelper;
+			packageProductDependencies = (
+			);
+			productName = OwlyHelper;
+			productReference = 30B498262C71DB5D00780AAC /* OwlyHelper */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		30B497BF2C71C28B00780AAC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					30B497C62C71C28B00780AAC = {
+						CreatedOnToolsVersion = 16.0;
+					};
+					30B497DC2C71C28C00780AAC = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 30B497C62C71C28B00780AAC;
+					};
+					30B497E62C71C28C00780AAC = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = 30B497C62C71C28B00780AAC;
+					};
+					30B498252C71DB5D00780AAC = {
+						CreatedOnToolsVersion = 16.0;
+					};
+				};
+			};
+			buildConfigurationList = 30B497C22C71C28B00780AAC /* Build configuration list for PBXProject "Owly" */;
+			compatibilityVersion = "Xcode 15.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 30B497BE2C71C28B00780AAC;
+			productRefGroup = 30B497C82C71C28B00780AAC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				30B497C62C71C28B00780AAC /* Owly */,
+				30B497DC2C71C28C00780AAC /* OwlyTests */,
+				30B497E62C71C28C00780AAC /* OwlyUITests */,
+				30B498252C71DB5D00780AAC /* OwlyHelper */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		30B497C52C71C28B00780AAC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30B497DB2C71C28C00780AAC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30B497E52C71C28C00780AAC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		30B497C32C71C28B00780AAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30B497D92C71C28C00780AAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30B497E32C71C28C00780AAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		30B498222C71DB5D00780AAC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		30B497DF2C71C28C00780AAC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 30B497C62C71C28B00780AAC /* Owly */;
+			targetProxy = 30B497DE2C71C28C00780AAC /* PBXContainerItemProxy */;
+		};
+		30B497E92C71C28C00780AAC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 30B497C62C71C28B00780AAC /* Owly */;
+			targetProxy = 30B497E82C71C28C00780AAC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		30B497EF2C71C28C00780AAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		30B497F02C71C28C00780AAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		30B497F22C71C28C00780AAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Owly/Owly.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Owly/Preview Content\"";
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = pranavkarra.Owly;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		30B497F32C71C28C00780AAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Owly/Owly.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Owly/Preview Content\"";
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = pranavkarra.Owly;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		30B497F52C71C28C00780AAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = pranavkarra.OwlyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Owly.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Owly";
+			};
+			name = Debug;
+		};
+		30B497F62C71C28C00780AAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = pranavkarra.OwlyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Owly.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Owly";
+			};
+			name = Release;
+		};
+		30B497F82C71C28C00780AAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = pranavkarra.OwlyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Owly;
+			};
+			name = Debug;
+		};
+		30B497F92C71C28C00780AAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = pranavkarra.OwlyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = Owly;
+			};
+			name = Release;
+		};
+		30B4982B2C71DB5D00780AAC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = OwlyHelper/OwlyHelper.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		30B4982C2C71DB5D00780AAC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = OwlyHelper/OwlyHelper.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		30B497C22C71C28B00780AAC /* Build configuration list for PBXProject "Owly" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30B497EF2C71C28C00780AAC /* Debug */,
+				30B497F02C71C28C00780AAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		30B497F12C71C28C00780AAC /* Build configuration list for PBXNativeTarget "Owly" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30B497F22C71C28C00780AAC /* Debug */,
+				30B497F32C71C28C00780AAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		30B497F42C71C28C00780AAC /* Build configuration list for PBXNativeTarget "OwlyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30B497F52C71C28C00780AAC /* Debug */,
+				30B497F62C71C28C00780AAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		30B497F72C71C28C00780AAC /* Build configuration list for PBXNativeTarget "OwlyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30B497F82C71C28C00780AAC /* Debug */,
+				30B497F92C71C28C00780AAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		30B4982A2C71DB5D00780AAC /* Build configuration list for PBXNativeTarget "OwlyHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				30B4982B2C71DB5D00780AAC /* Debug */,
+				30B4982C2C71DB5D00780AAC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 30B497BF2C71C28B00780AAC /* Project object */;
+}

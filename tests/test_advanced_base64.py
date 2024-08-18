@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import patch, mock_open, MagicMock
-from owly.advanced_base64 import encode_image, generate_smart_filename, process_files
+from owly_main.advanced_base64 import encode_image, generate_smart_filename, process_files
 
 class TestAdvancedBase64(unittest.TestCase):
 

@@ -1,5 +1,5 @@
 import unittest
-from owly.rename_files_base64 import rename_file_in_place
+from owly_main.rename_files_base64 import rename_file_in_place
 from unittest.mock import patch, MagicMock
 
 class TestRenameFilesBase64(unittest.TestCase):

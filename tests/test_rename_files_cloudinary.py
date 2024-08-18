@@ -1,5 +1,5 @@
 import unittest
-from owly.rename_files_cloudinary import rename_file_in_place
+from owly_main.rename_files_cloudinary import rename_file_in_place
 from unittest.mock import patch, MagicMock
 
 class TestRenameFilesCloudinary(unittest.TestCase):

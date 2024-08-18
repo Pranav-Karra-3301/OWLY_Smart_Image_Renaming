@@ -1,5 +1,5 @@
 import unittest
-from owly.basic import extract_text_from_image, generate_caption, generate_smart_filename, rename_screenshot
+from owly_main.basic import extract_text_from_image, generate_caption, generate_smart_filename, rename_screenshot
 from unittest.mock import patch, MagicMock
 
 class TestBasic(unittest.TestCase):

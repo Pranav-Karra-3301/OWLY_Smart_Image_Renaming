@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import patch, MagicMock
-from owly.advanced_cloudinary import upload_image_to_cloudinary, initialize_cloudinary
+from owly_main.advanced_cloudinary import upload_image_to_cloudinary, initialize_cloudinary
 
 class TestAdvancedCloudinary(unittest.TestCase):
 

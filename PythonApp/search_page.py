@@ -41,13 +41,17 @@ class SearchPage(QWidget):
 
         self.setLayout(layout)
 
-        # Display all files by default
+        # Display all files by default, sorted by process date (recent first)
         self.search("")
 
     def search(self, query=""):
         results = self.index_manager.search(query)
         self.file_list.clear()
-        for result in results:
+
+        # Sort results by processing date, most recent first
+        sorted_results = sorted(results, key=lambda x: x.get('processing_date', ''), reverse=True)
+
+        for result in sorted_results:
             item = QListWidgetItem(result['new_filename'])
             item.setData(Qt.ItemDataRole.UserRole, result)
             self.file_list.addItem(item)

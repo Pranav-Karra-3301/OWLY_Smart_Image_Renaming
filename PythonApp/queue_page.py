@@ -1,5 +1,3 @@
-# queue_page.py
-
 from PyQt6.QtWidgets import QWidget, QVBoxLayout, QProgressBar, QLabel
 from PyQt6.QtCore import pyqtSlot, Qt
 from PyQt6.QtGui import QMovie
@@ -39,11 +37,3 @@ class QueuePage(QWidget):
     def update_progress(self, current, total):
         self.progress_bar.setMaximum(total)
         self.progress_bar.setValue(current)
-        self.status_label.setText(f"Processing file {current} of {total}")
-
-    @pyqtSlot(str)
-    def show_completion_message(self, message):
-        self.status_label.setText(message)
-        self.progress_bar.setVisible(False)
-        self.loading_label.setVisible(False)
-        self.loading_movie.stop()

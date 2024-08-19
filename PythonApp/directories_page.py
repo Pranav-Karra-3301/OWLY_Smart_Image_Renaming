@@ -1,20 +1,20 @@
-# directories_page.py
-
 import os
 import subprocess
-from PyQt6.QtWidgets import (QWidget, QVBoxLayout, QHBoxLayout, 
-                             QPushButton, QListWidget, QFileDialog, QMessageBox, QListWidgetItem)
+from PyQt6.QtWidgets import (QWidget, QVBoxLayout, QHBoxLayout, QPushButton, QListWidget, QFileDialog, 
+                             QMessageBox, QProgressBar, QLabel)
 from PyQt6.QtCore import QThread, pyqtSignal, QSettings
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
+from index_manager import IndexManager
 
 class WorkerThread(QThread):
     progress = pyqtSignal(int, int)
     finished = pyqtSignal()
 
-    def __init__(self, directory):
+    def __init__(self, directory, progress_callback):
         super().__init__()
         self.directory = directory
+        self.progress_callback = progress_callback
 
     def run(self):
         try:
@@ -27,14 +27,32 @@ class WorkerThread(QThread):
                     if os.path.basename(file_path) == '.DS_Store':
                         print(f"Skipping .DS_Store file: {file_path}")
                         continue
-                    subprocess.run(["python", "scripts/advanced_base64.py", file_path], check=True)
-                    subprocess.run(["python", "scripts/rename_files_base64.py", file_path], check=True)
+                    # Process the file and get the new filename and description
+                    new_filename, description = self.process_file(file_path)
+                    if new_filename:
+                        new_path = os.path.join(root, new_filename)
+                        self.index_manager.add_processed_file(file_path, new_path, new_filename, description)
                     processed_files += 1
-                    self.progress.emit(processed_files, total_files)
+                    self.progress_callback(processed_files, total_files)
             
         except subprocess.CalledProcessError as e:
             print(f"An error occurred while running the scripts: {e}")
         self.finished.emit()
+
+    def process_file(self, file_path):
+        try:
+            result = subprocess.run(["python3", "scripts/advanced_base64.py", file_path], check=True, capture_output=True, text=True)
+            filename_and_description = result.stdout.strip().split('|')
+            if len(filename_and_description) == 2:
+                new_filename = filename_and_description[0].strip()
+                description = filename_and_description[1].strip()
+
+                rename_result = subprocess.run(["python3", "scripts/rename_files_base64.py", file_path, new_filename], check=True)
+                if rename_result.returncode == 0:
+                    return new_filename, description
+        except subprocess.CalledProcessError as e:
+            print(f"An error occurred while processing {file_path}: {e}")
+        return None, None
 
 class FileHandler(FileSystemEventHandler):
     def __init__(self, callback):
@@ -62,10 +80,17 @@ class DirectoriesPage(QWidget):
         self.directory_list = QListWidget()
         layout.addWidget(self.directory_list)
 
+        self.progress_bar = QProgressBar()
+        self.progress_bar.setValue(0)
+        layout.addWidget(self.progress_bar)
+
+        self.progress_label = QLabel("0/0 images processed")
+        layout.addWidget(self.progress_label)
+
         button_layout = QHBoxLayout()
         add_button = QPushButton("Add Directory")
         remove_button = QPushButton("Remove Directory")
-        process_button = QPushButton("Process Directories")
+        process_button = QPushButton("Process Images")
 
         add_button.clicked.connect(self.add_directory)
         remove_button.clicked.connect(self.remove_directory)
@@ -102,22 +127,20 @@ class DirectoriesPage(QWidget):
             self.save_directories()
 
     def process_directories(self):
-        if not self.directories:
-            QMessageBox.warning(self, "No Directories", "Please add directories to process.")
-            return
-
-        for directory in self.directories:
+        current_item = self.directory_list.currentItem()
+        if current_item:
+            directory = current_item.text()
             self.process_directory_signal.emit(directory)
 
-    def process_directory(self, directory):
-        self.worker = WorkerThread(directory)
-        self.worker.progress.connect(self.update_progress)
+    def start_processing(self, directory):
+        self.worker = WorkerThread(directory, self.update_progress)
         self.worker.finished.connect(self.on_processing_finished)
         self.worker.start()
 
     def update_progress(self, processed, total):
-        # Update progress in Queue page
-        pass
+        progress = int((processed / total) * 100)
+        self.progress_bar.setValue(progress)
+        self.progress_label.setText(f"{processed}/{total} images processed")
 
     def on_processing_finished(self):
         QMessageBox.information(self, "Processing Complete", "Directory processing has finished.")
@@ -146,9 +169,10 @@ class DirectoriesPage(QWidget):
             if os.path.basename(file_path) == '.DS_Store':
                 print(f"Skipping .DS_Store file: {file_path}")
                 return
-            subprocess.run(["python", "scripts/advanced_base64.py", file_path], check=True)
-            subprocess.run(["python", "scripts/rename_files_base64.py", file_path], check=True)
-            self.index_manager.add_to_index(file_path)
+            new_filename, description = self.worker.process_file(file_path)
+            if new_filename:
+                new_path = os.path.join(os.path.dirname(file_path), new_filename)
+                self.index_manager.add_processed_file(file_path, new_path, new_filename, description)
         except subprocess.CalledProcessError as e:
             print(f"An error occurred while processing {file_path}: {e}")
         except Exception as e:

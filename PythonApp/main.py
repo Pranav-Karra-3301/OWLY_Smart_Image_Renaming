@@ -1,5 +1,3 @@
-# main.py
-
 import sys
 from PyQt6.QtWidgets import QApplication
 from PyQt6.QtGui import QIcon
@@ -10,7 +8,7 @@ def main():
     app = QApplication(sys.argv)
     
     # Set the app icon
-    icon = QIcon('icon.icns')  # Make sure this file exists in your project directory
+    icon = QIcon('assets/icon.icns')
     app.setWindowIcon(icon)
     
     # On macOS, set the dock icon

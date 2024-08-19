@@ -1,5 +1,3 @@
-# rename_files_base64.py
-
 import os
 import sys
 from scripts.advanced_base64 import process_files, load_config
@@ -18,7 +16,7 @@ class FileProcessor(QObject):
     def rename_file_in_place(self, original_path, new_filename):
         directory = os.path.dirname(original_path)
         extension = os.path.splitext(original_path)[1]
-        new_filename = new_filename.strip('"').rstrip(extension)  # Remove quotes and extension
+        new_filename = new_filename.strip('"').rstrip(extension)  
         new_path = os.path.join(directory, f"{new_filename}{extension}")
         
         try:
@@ -50,10 +48,10 @@ class FileProcessor(QObject):
                 continue
 
             results = process_files(file_path, api_key)
-            for original_path, new_filename in results:
+            for original_path, new_filename, description in results:
                 new_path = self.rename_file_in_place(original_path, new_filename)
                 if new_path:
-                    self.index_manager.add_processed_file(original_path, new_path, new_filename)
+                    self.index_manager.add_processed_file(original_path, new_path, new_filename, description)
                     processed_files += 1
             
             self.progress_update.emit(index, total_files)
@@ -67,7 +65,7 @@ def main():
     if len(sys.argv) > 1:
         path = sys.argv[1]
     else:
-        path = "test_images/test_image.png"  # Default path
+        path = "test_images/test_image.png"  
 
     processor = FileProcessor()
     processor.process_and_rename(path)

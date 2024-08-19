@@ -1,6 +1,4 @@
-# search_page.py
-from PyQt6.QtWidgets import (QWidget, QVBoxLayout, QHBoxLayout, 
-                             QLineEdit, QLabel, QListWidget, QListWidgetItem)
+from PyQt6.QtWidgets import (QWidget, QVBoxLayout, QHBoxLayout, QLineEdit, QLabel, QListWidget, QListWidgetItem)
 from PyQt6.QtGui import QPixmap
 from PyQt6.QtCore import Qt
 
@@ -43,16 +41,24 @@ class SearchPage(QWidget):
 
         self.setLayout(layout)
 
-    def search(self):
-        query = self.search_bar.text()
+        # Display all files by default
+        self.search("")
+
+    def search(self, query=""):
         results = self.index_manager.search(query)
         self.file_list.clear()
         for result in results:
-            item = QListWidgetItem(result['filename'])
+            item = QListWidgetItem(result['new_filename'])
             item.setData(Qt.ItemDataRole.UserRole, result)
             self.file_list.addItem(item)
 
     def show_file_details(self, item):
         file_data = item.data(Qt.ItemDataRole.UserRole)
-        self.image_preview.setPixmap(QPixmap(file_data['path']).scaled(300, 300, Qt.AspectRatioMode.KeepAspectRatio))
-        self.file_info.setText(f"Filename: {file_data['filename']}\nPath: {file_data['path']}")
+        self.image_preview.setPixmap(QPixmap(file_data['new_path']).scaled(300, 300, Qt.AspectRatioMode.KeepAspectRatio))
+        self.file_info.setText(
+            f"Filename: {file_data['new_filename']}\n"
+            f"Original Filename: {file_data['original_filename']}\n"
+            f"Path: {file_data['new_path']}\n"
+            f"Description: {file_data.get('description', 'No description available')}\n"
+            f"Processing Date: {file_data.get('processing_date', 'Unknown')}"
+        )

@@ -11,29 +11,24 @@ class WorkerThread(QThread):
     progress = pyqtSignal(int, int)
     finished = pyqtSignal()
 
-    def __init__(self, directory, progress_callback):
+    def __init__(self, files_to_process, progress_callback, index_manager):
         super().__init__()
-        self.directory = directory
+        self.files_to_process = files_to_process
         self.progress_callback = progress_callback
+        self.index_manager = index_manager
 
     def run(self):
         try:
-            total_files = sum([len(files) for r, d, files in os.walk(self.directory)])
+            total_files = len(self.files_to_process)
             processed_files = 0
             
-            for root, dirs, files in os.walk(self.directory):
-                for file in files:
-                    file_path = os.path.join(root, file)
-                    if os.path.basename(file_path) == '.DS_Store':
-                        print(f"Skipping .DS_Store file: {file_path}")
-                        continue
-                    # Process the file and get the new filename and description
-                    new_filename, description = self.process_file(file_path)
-                    if new_filename:
-                        new_path = os.path.join(root, new_filename)
-                        self.index_manager.add_processed_file(file_path, new_path, new_filename, description)
-                    processed_files += 1
-                    self.progress_callback(processed_files, total_files)
+            for file_path in self.files_to_process:
+                new_filename, description = self.process_file(file_path)
+                if new_filename:
+                    new_path = os.path.join(os.path.dirname(file_path), new_filename)
+                    self.index_manager.add_processed_file(file_path, new_path, new_filename, description)
+                processed_files += 1
+                self.progress_callback(processed_files, total_files)
             
         except subprocess.CalledProcessError as e:
             print(f"An error occurred while running the scripts: {e}")
@@ -78,6 +73,7 @@ class DirectoriesPage(QWidget):
         layout = QVBoxLayout()
 
         self.directory_list = QListWidget()
+        self.directory_list.itemClicked.connect(self.update_progress_for_directory)
         layout.addWidget(self.directory_list)
 
         self.progress_bar = QProgressBar()
@@ -88,17 +84,17 @@ class DirectoriesPage(QWidget):
         layout.addWidget(self.progress_label)
 
         button_layout = QHBoxLayout()
-        add_button = QPushButton("Add Directory")
-        remove_button = QPushButton("Remove Directory")
-        process_button = QPushButton("Process Images")
+        self.add_button = QPushButton("Add Directory")
+        self.remove_button = QPushButton("Remove Directory")
+        self.process_button = QPushButton("Process Images")
 
-        add_button.clicked.connect(self.add_directory)
-        remove_button.clicked.connect(self.remove_directory)
-        process_button.clicked.connect(self.process_directories)
+        self.add_button.clicked.connect(self.add_directory)
+        self.remove_button.clicked.connect(self.remove_directory)
+        self.process_button.clicked.connect(self.process_directories)
 
-        button_layout.addWidget(add_button)
-        button_layout.addWidget(remove_button)
-        button_layout.addWidget(process_button)
+        button_layout.addWidget(self.add_button)
+        button_layout.addWidget(self.remove_button)
+        button_layout.addWidget(self.process_button)
 
         layout.addLayout(button_layout)
 
@@ -126,14 +122,62 @@ class DirectoriesPage(QWidget):
             self.remove_watcher(directory)
             self.save_directories()
 
+    def update_progress_for_directory(self, item):
+        directory = item.text()
+        total_files = 0
+        processed_files = 0
+
+        # List of valid image extensions to consider for processing
+        valid_extensions = ['.png', '.jpg', '.jpeg', '.gif', '.bmp']
+
+        for root, _, files in os.walk(directory):
+            for file in files:
+                file_path = os.path.join(root, file)
+                if os.path.splitext(file_path)[1].lower() not in valid_extensions:
+                    continue
+                total_files += 1
+                if self.index_manager.is_file_processed(file_path):
+                    processed_files += 1
+
+        if total_files > 0:
+            progress = int((processed_files / total_files) * 100)
+            self.progress_bar.setValue(progress)
+            self.progress_label.setText(f"{processed_files}/{total_files} images processed")
+
+            if processed_files == total_files:
+                self.process_button.setEnabled(False)
+            else:
+                self.process_button.setEnabled(True)
+        else:
+            self.progress_bar.setValue(0)
+            self.progress_label.setText("No images found")
+            self.process_button.setEnabled(False)
+
     def process_directories(self):
         current_item = self.directory_list.currentItem()
         if current_item:
             directory = current_item.text()
-            self.process_directory_signal.emit(directory)
 
-    def start_processing(self, directory):
-        self.worker = WorkerThread(directory, self.update_progress)
+            # Determine files to process
+            files_to_process = []
+            valid_extensions = ['.png', '.jpg', '.jpeg', '.gif', '.bmp']
+
+            for root, _, files in os.walk(directory):
+                for file in files:
+                    file_path = os.path.join(root, file)
+                    if os.path.splitext(file_path)[1].lower() not in valid_extensions:
+                        continue
+                    if not self.index_manager.is_file_processed(file_path):
+                        files_to_process.append(file_path)
+
+            if not files_to_process:
+                QMessageBox.information(self, "All Files Processed", "All files in the directory have already been processed.")
+                return
+
+            self.start_processing(files_to_process)
+
+    def start_processing(self, files_to_process):
+        self.worker = WorkerThread(files_to_process, self.update_progress, self.index_manager)
         self.worker.finished.connect(self.on_processing_finished)
         self.worker.start()
 
@@ -144,6 +188,7 @@ class DirectoriesPage(QWidget):
 
     def on_processing_finished(self):
         QMessageBox.information(self, "Processing Complete", "Directory processing has finished.")
+        self.update_progress_for_directory(self.directory_list.currentItem())
 
     def setup_watchers(self):
         for directory in self.directories:
@@ -166,8 +211,8 @@ class DirectoriesPage(QWidget):
 
     def process_new_file(self, file_path):
         try:
-            if os.path.basename(file_path) == '.DS_Store':
-                print(f"Skipping .DS_Store file: {file_path}")
+            if os.path.splitext(file_path)[1].lower() not in ['.png', '.jpg', '.jpeg', '.gif', '.bmp']:
+                print(f"Skipping non-image file: {file_path}")
                 return
             new_filename, description = self.worker.process_file(file_path)
             if new_filename:

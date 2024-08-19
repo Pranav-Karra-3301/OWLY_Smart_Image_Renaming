@@ -19,4 +19,4 @@ class Sidebar(QListWidget):
             self.addItem(item)
         
         # Ensure that the sidebar starts by selecting the first item
-        self.setCurrentRow(3)
+        self.setCurrentRow(0)

@@ -88,10 +88,10 @@ class HelperTool: NSObject, HelperToolProtocol {
     }
     
     func checkPythonEnvironment(reply: @escaping (Bool) -> Void) {
-        reply(checkPythonEnvironment())
+        reply(OwlyHelper.checkPythonEnvironment())
     }
     
     func installRequirements(reply: @escaping (Bool) -> Void) {
-        reply(installRequirements())
+        reply(OwlyHelper.installRequirements())
     }
 }

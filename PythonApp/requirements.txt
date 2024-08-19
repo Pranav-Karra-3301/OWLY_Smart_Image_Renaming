@@ -1,0 +1,9 @@
+openai
+cloudinary
+requests
+pytesseract
+Pillow
+spacy
+torch
+transformers
+streamlit

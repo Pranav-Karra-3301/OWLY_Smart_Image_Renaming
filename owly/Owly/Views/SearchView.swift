@@ -2,6 +2,7 @@ import SwiftUI
 import CoreData
 
 struct SearchView: View {
+    @ObservedObject var directoriesViewModel: DirectoriesViewModel
     @State private var searchQuery = ""
     @State private var searchResults: [FileIndex] = []
     @Environment(\.managedObjectContext) private var viewContext
@@ -58,6 +59,7 @@ struct SearchView: View {
 
 struct SearchView_Previews: PreviewProvider {
     static var previews: some View {
-        SearchView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        SearchView(directoriesViewModel: DirectoriesViewModel())
+            .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

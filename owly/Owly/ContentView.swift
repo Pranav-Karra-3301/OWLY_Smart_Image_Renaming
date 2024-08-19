@@ -1,30 +1,31 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var selectedSection: String? = "Search"
+    @StateObject private var directoriesViewModel = DirectoriesViewModel()
+    @StateObject private var statusViewModel = StatusViewModel()
 
     var body: some View {
         NavigationView {
             List {
-                NavigationLink(destination: SearchView(), tag: "Search", selection: $selectedSection) {
+                NavigationLink(destination: SearchView(directoriesViewModel: directoriesViewModel)) {
                     Label("Search", systemImage: "magnifyingglass")
                 }
-                NavigationLink(destination: StatisticsView(), tag: "Statistics", selection: $selectedSection) {
+                NavigationLink(destination: StatisticsView()) {
                     Label("Statistics", systemImage: "chart.bar")
                 }
-                NavigationLink(destination: PreferencesView(), tag: "Preferences", selection: $selectedSection) {
+                NavigationLink(destination: PreferencesView()) {
                     Label("Preferences", systemImage: "gear")
                 }
-                NavigationLink(destination: APIKeyView(), tag: "APIKey", selection: $selectedSection) {
+                NavigationLink(destination: APIKeyView()) {
                     Label("API Key", systemImage: "key")
                 }
-                NavigationLink(destination: DirectoriesView(), tag: "Directories", selection: $selectedSection) {
+                NavigationLink(destination: DirectoriesView(viewModel: directoriesViewModel, statusViewModel: statusViewModel)) {
                     Label("Directories", systemImage: "folder")
                 }
-                NavigationLink(destination: StatusView(), tag: "Status", selection: $selectedSection) {
+                NavigationLink(destination: StatusView(viewModel: statusViewModel)) {
                     Label("Status", systemImage: "clock")
                 }
-                NavigationLink(destination: AboutView(), tag: "About", selection: $selectedSection) {
+                NavigationLink(destination: AboutView()) {
                     Label("About", systemImage: "info.circle")
                 }
             }

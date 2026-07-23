@@ -8,6 +8,10 @@
 
 ![MIT License](https://img.shields.io/badge/License-MIT-yellow.svg) ![Python Version](https://img.shields.io/badge/Python-3.8%2B-blue.svg) ![OpenAI API](https://img.shields.io/badge/OpenAI-API-orange.svg) ![Cloudinary Integration](https://img.shields.io/badge/Cloudinary-Integration-blueviolet.svg) ![Base64 Encoding](https://img.shields.io/badge/Base64-Encoding-brightgreen.svg) ![Pytesseract](https://img.shields.io/badge/Pytesseract-Text%20Extraction-lightgrey.svg) ![Transformers](https://img.shields.io/badge/Transformers-NLP-blue.svg)
 
+OWLY (Smart File Renamer) is a tool that automatically renames images and screenshots based on what is actually inside them, using OCR and OpenAI models to read the content and generate meaningful file names. It ships as Python scripts, a desktop app, and a native macOS app. There are three renaming methods, from a free local option to cloud-backed analysis.
+
+**Live demo:** [owly-seven.vercel.app](https://owly-seven.vercel.app)
+
 ## 🌟 Features
 
 ### 1. 🚀 Basic Method
@@ -38,8 +42,8 @@ To get started with Smart File Renamer, follow these steps:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/Pranav-Karra-3301/smart-screenshots.git
-   cd smart-screenshots
+   git clone https://github.com/Pranav-Karra-3301/OWLY_Smart_Image_Renaming.git
+   cd OWLY_Smart_Image_Renaming
    ```
    
 2. **Install Dependencies**:
@@ -113,10 +117,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 Enjoy smart file renaming with advanced content recognition! 🎉
 
+Built by [Pranav Karra](https://pranavkarra.me).
+
 ## 🙌 Contributions
 
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/Pranav-Karra-3301/smart-screenshot-renamer/issues) for open issues or to start a discussion.
+Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/Pranav-Karra-3301/OWLY_Smart_Image_Renaming/issues) for open issues or to start a discussion.
 
 ## 📞 Support
 
-For any inquiries, suggestions, or issues, please [open an issue](https://github.com/Pranav-Karra-3301/smart-screenshot-renamer/issues) or contact me directly.
+For any inquiries, suggestions, or issues, please [open an issue](https://github.com/Pranav-Karra-3301/OWLY_Smart_Image_Renaming/issues) or contact me directly.
